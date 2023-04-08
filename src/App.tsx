@@ -41,6 +41,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Added Title</h1>
       <br />
       <AddItem addItem={addItem} />
       <br/>
