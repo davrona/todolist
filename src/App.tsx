@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+// eeslint-disable-next-line @typescript-eslint/no-unused-vars
 import logo from './logo.svg';
 import './App.css';
 
@@ -42,7 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ</h1>
+      <h1>Branch should not be merged</h1>
       <br />
       <AddItem addItem={addItem} />
       <br/>
