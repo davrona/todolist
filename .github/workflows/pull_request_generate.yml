@@ -15,6 +15,6 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Automatically generated pull request
-        branch: main
+        branch: master
         title: Automatically generated pull request
         body: Automatically generated pull request from feature branch
