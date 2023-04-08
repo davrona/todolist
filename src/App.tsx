@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import AddItem from "./AddItem";
+import ToDoList, { Item } from "./ToDoList";
+
+const initialList = [
+  {
+    task: "Pick up Milk",
+    priority: 1,
+  },
+  {
+    task: "Buy Eggs",
+    priority: 2,
+  },
+  {
+    task: "Buy Bread",
+    priority: 3,
+  },
+];
+
+const isPartOf = (item: Item, items: Item[]): boolean => {
+  return items.some((it) => it.priority === item.priority);
+};
+
 function App() {
+  const [items, setItems] = useState<Item[]>([]);
+
+  useEffect(() => {
+    setItems([...initialList])
+  }, []);
+
+  const addItem = (item: Item) => {
+      if(isPartOf(item, items)) {
+        alert(`Item with priorirty: ${item.priority} exists`);
+        return;
+      }
+      setItems([...items, item])
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <br />
+      <AddItem addItem={addItem} />
+      <br/>
+      <ToDoList items={items} />
     </div>
   );
 }
