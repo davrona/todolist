@@ -13,7 +13,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5.0.0
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.SECRET }}
         commit-message: Automatically generated pull request
         branch: master
         title: Automatically generated pull request
