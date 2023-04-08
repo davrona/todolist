@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import logo from './logo.svg';
 import './App.css';
 
